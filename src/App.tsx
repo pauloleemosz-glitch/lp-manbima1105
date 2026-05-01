@@ -7,6 +7,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<CaptacaoPage />} />
+        <Route path="/manbima-convite" element={<CaptacaoPage />} />
         <Route path="/parabens-manbima" element={<ObrigadoPage />} />
       </Routes>
     </BrowserRouter>
