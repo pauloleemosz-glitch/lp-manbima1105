@@ -7,6 +7,9 @@ function pushLeadEvent() {
   const w = window as any
   w.dataLayer = w.dataLayer || []
   w.dataLayer.push({ event: 'Lead' })
+  if (typeof w.fbq === 'function') {
+    w.fbq('track', 'Lead')
+  }
 }
 
 export default function ObrigadoPage() {
