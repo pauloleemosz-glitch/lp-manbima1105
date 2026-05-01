@@ -18,13 +18,12 @@ export default function ObrigadoPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md border-b border-border" style={{ background: 'hsl(220, 28%, 8% / 0.9)' }}>
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🦈</span>
-            <div>
-              <span className="font-body font-bold text-foreground text-sm">Lucas Silva</span>
-              <span className="font-body text-primary text-sm ml-1">Certificações</span>
-            </div>
-          </div>
+          <img
+            src="/ls-certificacoes-logo-white.svg"
+            alt="Lucas Silva Certificações"
+            className="h-9 w-auto"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+          />
           <span className="bg-success/15 text-green-400 text-xs font-body font-bold px-3 py-1 rounded-full">
             Lead confirmado ✓
           </span>
@@ -107,10 +106,12 @@ export default function ObrigadoPage() {
       {/* Footer */}
       <footer className="border-t border-border py-8 px-6" style={{ background: 'hsl(220, 28%, 5%)' }}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">🦈</span>
-            <span className="font-body font-bold text-foreground text-sm">Lucas Silva Certificações</span>
-          </div>
+          <img
+            src="/ls-certificacoes-logo-white.svg"
+            alt="Lucas Silva Certificações"
+            className="h-7 w-auto opacity-70"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+          />
           <p className="text-xs font-body text-muted-foreground text-center">
             LSMC Cursos e Treinamentos | 28.737.851/0001-30
           </p>
