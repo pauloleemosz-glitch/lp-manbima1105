@@ -198,7 +198,7 @@ export default function CaptacaoPage() {
                   <input
                     type="text" required placeholder="Ex: João Silva"
                     value={nome} onChange={(e) => setNome(e.target.value)}
-                    className="w-full bg-secondary border border-border rounded-[0.75rem] px-4 py-3.5 text-white font-body text-base placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
+                    className="w-full bg-white border border-border rounded-[0.75rem] px-4 py-3.5 text-gray-900 font-body text-base placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
                   />
                 </div>
                 <div>
@@ -206,7 +206,7 @@ export default function CaptacaoPage() {
                   <input
                     type="email" required placeholder="Ex: joao@gmail.com"
                     value={email} onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-secondary border border-border rounded-[0.75rem] px-4 py-3.5 text-white font-body text-base placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
+                    className="w-full bg-white border border-border rounded-[0.75rem] px-4 py-3.5 text-gray-900 font-body text-base placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
                   />
                 </div>
                 <div>
@@ -214,7 +214,7 @@ export default function CaptacaoPage() {
                   <input
                     type="tel" required placeholder="Ex: (11) 99999-9999"
                     value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)}
-                    className="w-full bg-secondary border border-border rounded-[0.75rem] px-4 py-3.5 text-white font-body text-base placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
+                    className="w-full bg-white border border-border rounded-[0.75rem] px-4 py-3.5 text-gray-900 font-body text-base placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/15"
                   />
                 </div>
                 <button
