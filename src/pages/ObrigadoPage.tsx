@@ -2,14 +2,16 @@ import { useEffect } from 'react'
 
 const WHATSAPP_GROUP_LINK = 'https://bit.ly/4txHgcH'
 
-declare global {
-  interface Window { dataLayer: unknown[] }
+function pushLeadEvent() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const w = window as any
+  w.dataLayer = w.dataLayer || []
+  w.dataLayer.push({ event: 'Lead' })
 }
 
 export default function ObrigadoPage() {
   useEffect(() => {
-    window.dataLayer = window.dataLayer || []
-    window.dataLayer.push({ event: 'Lead' })
+    pushLeadEvent()
   }, [])
 
   return (
