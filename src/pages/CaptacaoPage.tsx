@@ -1,48 +1,14 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const AC_API_URL = 'https://professorlucassilva38279.api-us1.com'
-const AC_API_KEY = '777b287f89a6dd172db6f5a728b1d79c22bbfea984b112c06ee71728e43f70c4d443ecf0'
+const PROXY_URL = 'http://34.66.142.94/api/lead'
 const AC_TAG    = '[MANBIMA] - Leads LS1105'
 
-declare global {
-  interface Window { dataLayer: unknown[] }
-}
-
 async function submitToActiveCampaign(nome: string, email: string, whatsapp: string) {
-  const firstName = nome.split(' ')[0]
-  const lastName  = nome.split(' ').slice(1).join(' ')
-
-  const contactRes = await fetch(`${AC_API_URL}/api/3/contacts`, {
+  await fetch(PROXY_URL, {
     method: 'POST',
-    headers: { 'Api-Token': AC_API_KEY, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ contact: { email, firstName, lastName, phone: whatsapp } }),
-  })
-  const contactData = await contactRes.json()
-  const contactId = contactData.contact?.id
-  if (!contactId) return
-
-  const tagsRes = await fetch(
-    `${AC_API_URL}/api/3/tags?filters[tag]=${encodeURIComponent(AC_TAG)}`,
-    { headers: { 'Api-Token': AC_API_KEY } }
-  )
-  const tagsData = await tagsRes.json()
-  let tagId = tagsData.tags?.[0]?.id
-
-  if (!tagId) {
-    const createTagRes = await fetch(`${AC_API_URL}/api/3/tags`, {
-      method: 'POST',
-      headers: { 'Api-Token': AC_API_KEY, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tag: { tag: AC_TAG, tagType: 'contact' } }),
-    })
-    tagId = (await createTagRes.json()).tag?.id
-  }
-  if (!tagId) return
-
-  await fetch(`${AC_API_URL}/api/3/contactTags`, {
-    method: 'POST',
-    headers: { 'Api-Token': AC_API_KEY, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ contactTag: { contact: contactId, tag: tagId } }),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nome, email, whatsapp, tag: AC_TAG }),
   })
 }
 
