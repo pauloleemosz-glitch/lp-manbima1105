@@ -132,7 +132,7 @@ export default function CaptacaoPage() {
             <div className="flex flex-wrap gap-3 mb-8">
               {[
                 { icon: '📅', text: '11 de Maio — gratuito' },
-                { icon: '🎯', text: '+10.000 aprovados' },
+                { icon: '🎯', text: '+115.000 aprovados' },
                 { icon: '✅', text: 'Nova CPA atualizada' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 bg-card border border-border rounded-full px-3 py-1.5">

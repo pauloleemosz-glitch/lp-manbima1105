@@ -25,7 +25,7 @@ export default function ObrigadoPage() {
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
           />
           <span className="bg-success/15 text-green-400 text-xs font-body font-bold px-3 py-1 rounded-full">
-            Lead confirmado ✓
+            Cadastro confirmado ✓
           </span>
         </div>
       </header>
@@ -81,25 +81,6 @@ export default function ObrigadoPage() {
             Acesso gratuito · Link direto para o WhatsApp
           </p>
 
-          {/* O que esperar */}
-          <div className="mt-16 bg-card border border-border rounded-2xl p-8">
-            <h2 className="font-display font-black text-2xl text-foreground mb-6">
-              O que você vai receber no grupo:
-            </h2>
-            <div className="grid sm:grid-cols-3 gap-4 text-left">
-              {[
-                { icon: '📚', title: 'Material atualizado', desc: 'Apostila e simulados alinhados às provas de 2026' },
-                { icon: '🎯', title: 'Plano de estudos', desc: 'Cronograma de 20 dias para aprovar com foco total' },
-                { icon: '💬', title: 'Suporte direto', desc: 'Tire dúvidas com o Prof. Lucas e outros alunos' },
-              ].map((item) => (
-                <div key={item.title} className="flex flex-col gap-2">
-                  <div className="text-3xl">{item.icon}</div>
-                  <p className="font-body font-bold text-foreground text-sm">{item.title}</p>
-                  <p className="font-body text-xs text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </main>
 
