@@ -170,7 +170,8 @@ export default function CaptacaoPage() {
                 <img
                   src="/lucas-silva.jpg"
                   alt="Prof. Lucas Silva"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: '85% 10%' }}
                   onError={(e) => {
                     const el = e.currentTarget
                     el.style.display = 'none'
