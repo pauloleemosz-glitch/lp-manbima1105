@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/LINK_DO_GRUPO_AQUI'
+const WHATSAPP_GROUP_LINK = 'https://bit.ly/4txHgcH'
 
 declare global {
   interface Window { dataLayer: unknown[] }
