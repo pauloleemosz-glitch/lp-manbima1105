@@ -1,13 +1,18 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const PROXY_URL = 'https://ls-proxy.duckdns.org/api/lead'
-const AC_TAG    = '[MANBIMA] - Leads LS1105'
+const SUPABASE_URL     = 'https://tfzoekjltbzvgxmgygjn.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmem9la2psdGJ6dmd4bWd5Z2puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcwODA3MTYsImV4cCI6MjA5MjY1NjcxNn0.-ePObbeT8ZNk_AZdUjv5sV6Xo-_xSsO-PWTjLWo19jo'
+const AC_TAG           = '[MANBIMA] - Leads LS1105'
 
 async function submitToActiveCampaign(nome: string, email: string, whatsapp: string) {
-  await fetch(PROXY_URL, {
+  await fetch(`${SUPABASE_URL}/functions/v1/add-lead`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+    },
     body: JSON.stringify({ nome, email, whatsapp, tag: AC_TAG }),
   })
 }
