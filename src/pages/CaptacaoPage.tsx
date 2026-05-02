@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const PROXY_URL = 'http://34.66.142.94/api/lead'
+const PROXY_URL = 'https://ls-proxy.duckdns.org/api/lead'
 const AC_TAG    = '[MANBIMA] - Leads LS1105'
 
 async function submitToActiveCampaign(nome: string, email: string, whatsapp: string) {
